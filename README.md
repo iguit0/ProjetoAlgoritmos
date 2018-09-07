@@ -5,9 +5,9 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 ## Algoritmos :pushpin:
 
 - [x] **[Max_min](./Max_min/max_min.c)**
+- [ ] **[Shell Sort](./Shell_Sort/shell_sort.c)** :hourglass:
 - [ ] **[Selection Sort](./Selection_Sort/selection_sort.c)** :hourglass:
 - [ ] Insertion Sort :hourglass:
-- [ ] Shell Sort :hourglass:
 - [ ] Merge Sort :hourglass:
 - [ ] Heap Sort :hourglass:
 
