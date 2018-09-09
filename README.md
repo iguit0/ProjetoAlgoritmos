@@ -7,6 +7,7 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 - [x] **[Max_min](./Max_min/max_min.c)**
 - [ ] **[Shell Sort](./Shell_Sort/shell_sort.c)** :hourglass:
 - [ ] **[Selection Sort](./Selection_Sort/selection_sort.c)** :hourglass:
+- [ ] **[Quick Sort](./Quick_Sort/quick_sort.c)** :hourglass:
 - [ ] Insertion Sort :hourglass:
 - [ ] Merge Sort :hourglass:
 - [ ] Heap Sort :hourglass:
