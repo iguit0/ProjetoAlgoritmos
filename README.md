@@ -19,3 +19,4 @@ Em breve...
 ## Referências :books:
 
 - ZIVIANI, Nivio. Projeto de algoritmos: implementações em Java e C++. Thomsom Learning. 2006.
+- Cormen, Thomas H.; Leiserson, Charles E.; Rivest, Ronald L.; Stein, Clifford (2009). Introduction to Algorithms (3rd ed.). MIT Press and McGraw-Hill
