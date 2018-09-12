@@ -12,7 +12,7 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 - [ ] Merge Sort :hourglass:
 - [ ] Heap Sort :hourglass:
 
-## Resultados :chart_with_upwards_trend::clipboard:
+## Resultados :clipboard:
 
 Em breve...
 
