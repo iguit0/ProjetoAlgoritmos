@@ -20,41 +20,6 @@ void selection_sort(int* elementos, int n) {
     }
 }
 
-void insertion_sort(int* elementos, int n) {
-    int i,j;
-    for(i=1;i<n;i++){
-        j = i-1;
-        int x = elementos[i];
-        while(x < elementos[j] && j >= 0){
-            elementos[j+1] = elementos[j];
-            elementos[j] = x;
-            j--;
-        }
-    }
-}
-
-void shell_sort(int* elementos, int n) {
-    int i,j,h=1;
-    do {
-        h= 3 * h + 1;
-    }while(h<n);
-    do {
-        h /= 3;
-        for (i=h+1;i<=n;i++) {
-            int x = elementos[i];
-            j=i;
-            while(elementos[j-h] > x) {
-                elementos[j] = elementos[j-h];
-                j-=h;
-                if(j<=h){
-                    goto L999;
-                }
-                L999: elementos[j] = x;
-            }
-        }
-    }while(h!=1);
-}
-
 void crescente(int* vetor,int qtd) {
     int i = 0;
     char nome[100], temp[100];
