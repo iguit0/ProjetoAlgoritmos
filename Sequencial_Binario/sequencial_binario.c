@@ -19,7 +19,6 @@ void escolher_pesquisa();
 CELULA* pesquisabinaria(CELULA *lista, int qnt);
 void pesquisasequencial(CELULA *lista, int qnt);
 
-
 int main() {
     int opc, opcinserir, qnt = 0, i = 0;
     CELULA *controle,* a;
@@ -224,7 +223,7 @@ void pesquisasequencial(CELULA *lista, int qnt) {
     if (count == 0) {
         printf("\t\tREGISTRO NAO ENCONTRADO\n\n");
     }
-    printf("\nQuantidade de registros visitados: %d\n", cont);
+    //printf("\nQuantidade de registros visitados: %d\n", cont);
     printf("\nTempo de execucao:  %.2f ms\n", (tempo*1000));
 }
 

@@ -11,6 +11,7 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 - [ ] Insertion Sort :hourglass:
 - [ ] Merge Sort :hourglass:
 - [ ] Heap Sort :hourglass:
+- [ ] **[Sequencial_Binário](./Sequencial_Binario/sequencial_binario.c)** :hourglass:
 
 ## Resultados :clipboard:
 
