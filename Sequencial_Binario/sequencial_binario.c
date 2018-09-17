@@ -1,162 +1,98 @@
+/* https://github.com/iguit0/Projeto-De-Algoritmos */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <locale.h>
+#define n 1000000
 
-// https://github.com/iguit0/Projeto-De-Algoritmos
-
-typedef struct sCell{
-   	int chave;
-   	struct sCell* prox;
-} CELULA;
-
-CELULA* cria();
-int vazia(CELULA *no);
-void inserirdinamica(CELULA *lista);
-void inseriraleatorio(CELULA *lista, int i);
-void exibe(CELULA *lista);
-void escolher_pesquisa();
-CELULA* pesquisabinaria(CELULA *lista, int qnt);
-void pesquisasequencial(CELULA *lista, int qnt);
+typedef struct sNo{
+	int info;
+	struct sNo* esquerda;
+	struct sNo* direita;
+}NO;
 
 int main() {
-    int opc, opcinserir, qnt = 0, i = 0;
-    CELULA *controle,* a;
-    int *vet = (int *) malloc(sizeof (int));
-    controle = cria();
-    do {
-        printf("\t\t\t--MENU--\n1) INSERIR\n2) CONSULTAR\n3) EXCLUIR\n4) EXIBIR TUDO\n5) ENCERRAR PROGRAMA\n\t\n\tDIGITE SUA OPCAO > ");
+	NO* raiz;
+	NO* a;
+	FILE* f;
+	int opc, qnt = 0, i = 0,*elementos, valor;
+	/*
+	f =  fopen("entrada1e+06.txt","r");
+	if (f == NULL) {
+  		printf("\nErro na abertura do arquivo!");
+  		exit(1);
+	}
+
+    elementos = (int*) malloc(n*sizeof(int));
+
+    for(i=0;i<n;i++) {
+        fscanf(f, "%d", &elementos[i]);
+    }*/
+	
+	inicializar(&raiz);
+	inserirRecursivo(&raiz,50); //teste
+	inserirRecursivo(&raiz,40); //teste
+	do {
+        printf("\t\t\t--MENU--\n1) VAZIO\n2) PESQUISA BINARIA\n3) PESQUISA SEQUENCIAL\n4) EXIBIR TUDO\n5) ENCERRAR PROGRAMA\n\t\n\tDIGITE SUA OPCAO > ");
         scanf("%d", &opc);
         switch (opc) {
             case 1:
-                printf("Qual a maneira de insercao?\n1-Aleatorio\n2-Estático\n-->OPCAO:");
-                scanf("%d", &opcinserir);
-                if (opcinserir == 1) {
-                    printf("Qual a quantidade de CELULA para gerar automaticamente?");
-                    scanf("%d", &qnt);
-                    inseriraleatorio(controle, qnt);
-                }
-                if (opcinserir == 2) {
-                    qnt++;
-                    inserirdinamica(controle);
-                }
-                system("clear");
+                if(vazia(&raiz)==1) printf("\n\tArvore vazia!\n\n");
+                else printf("\n\tArvore nao esta vazia!!\n\n");
                 break;
-                opcinserir = 0;
             case 2:
-                printf("\n\tPesquisar como\n1 - Binaria\n2 - Sequencial\n\nOpcao > ");
-                scanf("%d", &opcinserir);
-                if (opcinserir == 1) {
-                    a = pesquisabinaria(controle, qnt);
-                }
-                if (opcinserir == 2) {
-                    pesquisasequencial(controle, qnt);
-                }
+            	//pesquisabinaria(&raiz,n);
                 break;
             case 3:
-                //excluir(controle, qnt);
+            	pesquisasequencial(&raiz);
                 break;
             case 4:
-                exibe(controle);
+                exibe(&raiz);
                 break;
             case 5:
                 printf("\nVoce saiu!!");
-                system("clear");
                 break;
             default:
                 printf("Digite uma opcao valida!");
         }
     } while (opc != 5);
 
-    free(controle);
-    controle = NULL;
-    return 0;
+	
+	free(raiz);
+	raiz = NULL;
+	return 0;
 }
 
-CELULA* cria() {
-    CELULA* lista = (CELULA*) malloc(sizeof(CELULA));
-    lista->prox = NULL;
-    return lista;
-}
-
-int vazia(CELULA *no) {
-    if (no->prox == NULL) return 1;
-    else return 0;
-}
-
-void inserirdinamica(CELULA *lista) {
-    CELULA *atual, *anterior;
-    CELULA *novo = (CELULA*) malloc(sizeof(CELULA));
-    int cont = 0;
-    printf("Elemento ser inserido: ");
-    scanf("%d", &novo->chave);
-    novo->prox = NULL;
-    atual = lista;
-    anterior = NULL;
-    if (vazia(atual) == 1) {
-        novo->prox = NULL;
-        lista->prox = novo;
-    } else {
-        while (atual != NULL && atual->chave <= novo->chave) {
-            if (atual->chave == novo->chave) {
-                cont++;
-            }
-            anterior = atual;
-            atual = atual->prox;
+void pesquisasequencial(NO** raiz) {
+    NO* aux = raiz;
+    int valor, cont = 0, i, count = 0;
+    float tempo = 0;
+    clock_t in, f;
+    //setbuf(stdin, NULL);
+    printf("\nDigite a chave > ");
+    scanf("%d", &valor);
+    i = clock();
+    while (aux != NULL) {
+        cont++;
+        if (aux->info == valor) {
+            count++;
+            printf("\t\t--Registro encontrado-- \n\n");
+            printf("Valor: %d\n", aux->info);
         }
-        if (cont == 0) {
-            novo->prox = atual;
-            if (anterior == NULL) {
-                lista->prox = novo;
-            } else {
-                anterior->prox = novo;
-            }
-        } else {
-            printf("ERRO! Numeros de chave iguais\n");
-        }
+        aux = aux->esquerda;
     }
-}
-
-void inseriraleatorio(CELULA *lista, int quantidade) {
-    CELULA *atual, *anterior;
-    int j, num, cont = 0, i;
-    srand(time(NULL));
-    for (i = 0; i < quantidade; i++) {
-        CELULA *novo = (CELULA *) malloc(sizeof (CELULA));
-        novo->chave = i + 1;
-        //printf("Valor de quantidade=%d e valor de chave aleatorio =%d\n", i, novo->chave);
-        atual = lista;
-        anterior = NULL;
-        if (vazia(atual) == 1) {
-            novo->prox = NULL;
-            lista->prox = novo;
-        }
-        else {
-            while (atual != NULL && atual->chave <= novo->chave) {
-                if (atual->chave == novo->chave) {
-                    cont++;
-                }
-                anterior = atual;
-                atual = atual->prox;
-            }
-            if (cont == 0) {
-                novo->prox = atual;
-                if (anterior == NULL) {
-                    lista->prox = novo;
-                }
-                else {
-                    anterior->prox = novo;
-                }
-            } else {
-                printf("ERRO! Numeros de chave iguais\n");
-            }
-        }
+    f = clock();
+    tempo = ((float) (f - in) / CLOCKS_PER_SEC);
+    if (count == 0) {
+        printf("\t\tREGISTRO NAO ENCONTRADO\n\n");
     }
+    printf("\nQuantidade de registros visitados: %d\n", cont);
+    printf("\nTempo de execucao:  %.2f ms\n", (tempo*1000));
 }
 
-CELULA* pesquisabinaria(CELULA *lista, int qnt) {
-    CELULA *aux = lista;
-    CELULA *a = lista;
+NO* pesquisabinaria(NO** raiz, int qnt) {
+    NO* aux = raiz;
+    NO* a = raiz;
     int valor, comparacao=0, chave = 0, inicio = 0, meio = 0, fim = (qnt - 1), ok = 0, x = 0;
     float tempo = 0;
     clock_t i, f;
@@ -164,19 +100,19 @@ CELULA* pesquisabinaria(CELULA *lista, int qnt) {
     scanf("%d", &valor);
     i = clock();
     while (inicio <= fim) {
-        //percorre a lista até achar o elemento do meio
+        //percorre ate achar o elemento do meio
         meio = (inicio + fim) / 2;
         x = 0;
-        a = lista;
+        a = raiz;
         while (x != meio) {
-            a = a->prox;
+            a = a->direita;
             x++;
         }
-        chave = a->chave; //pega a chave
+        chave = a->info; //pega a chave
 
         if (valor == chave) { //se for igual ao meio, exibe e encerra a busca
             printf("\t\t--Registro encontrado-- \n\n");
-            printf("Valor: %d\n", a->chave);
+            printf("Valor: %d\n", a->info);
             ok = 1;
             break;
         } else if (valor < chave) { ///se for menor, limita a busca a primeira metade
@@ -184,9 +120,8 @@ CELULA* pesquisabinaria(CELULA *lista, int qnt) {
         } else { //se for maior, limita a busca a segunda metade
             inicio = meio + 1;
         }
-
         comparacao++;
-        aux = aux->prox;
+        aux = aux->direita;
     }
     f = clock();
     tempo = ((float) (f - i) / CLOCKS_PER_SEC);
@@ -200,43 +135,110 @@ CELULA* pesquisabinaria(CELULA *lista, int qnt) {
     return a;
 }
 
-void pesquisasequencial(CELULA *lista, int qnt) {
-    CELULA *aux = lista;
-    int valor, cont = 0, i, count = 0;
-    float tempo = 0;
-    clock_t in, f;
-    setbuf(stdin, NULL);
-    printf("Digite a chave :");
-    scanf("%d", &valor);
-    i = clock();
-    while (aux != NULL) {
-        cont++;
-        if (aux->chave == valor) {
-            count++;
-            printf("\t\t--Registro encontrado-- \n\n");
-            printf("Valor: %d\n", aux->chave);
-        }
-        aux = aux->prox;
-    }
-    f = clock();
-    tempo = ((float) (f - in) / CLOCKS_PER_SEC);
-    if (count == 0) {
-        printf("\t\tREGISTRO NAO ENCONTRADO\n\n");
-    }
-    //printf("\nQuantidade de registros visitados: %d\n", cont);
-    printf("\nTempo de execucao:  %.2f ms\n", (tempo*1000));
+void exibe(NO** raiz) {
+	printf("\n%d", (*raiz)->info);
 }
 
-void exibe(CELULA *lista) {
-    CELULA* aux = lista->prox;
-    if (aux == NULL) {
-        printf("vazio\n");
-    } else {
-        printf("Elementos > ");
-        while (aux != NULL) {
-            printf("%d ", aux->chave);
-            aux = aux->prox;
-        }
-    }
-    printf("\n\n");
+
+NO* criarCelula(){
+	NO* nova = (NO *) malloc(sizeof(NO));
+	if(nova == NULL) return NULL;
+	nova->direita = NULL;
+	nova->esquerda = NULL;
+	return nova;
 }
+
+void inicializar(NO** raiz){
+	(*raiz) = NULL;
+}
+
+int vazia(NO** raiz){
+	if((*raiz) == NULL) return 1;
+	return 0;
+}
+
+int inserirRecursivo(NO** raiz, int elemento){
+	if(vazia(raiz)){
+		NO* nova = criarCelula();
+		nova->info = elemento;
+		*raiz = nova;
+		return 1;
+	}
+	if((*raiz)->info > elemento){
+		return inserirRecursivo(&(*raiz)->esquerda,elemento);
+	}else{
+		return inserirRecursivo(&(*raiz)->direita,elemento);
+	}
+}
+
+int inserirIterativo(NO** raiz, int elemento){
+	NO* aux = *raiz;
+	NO* nova = criarCelula();
+	nova->info = elemento;
+	if(vazia(raiz)){
+		*raiz = nova;
+		return 1;
+	}
+	while (aux != NULL){
+		if(aux->info > elemento){
+			if(aux->esquerda == NULL){
+				aux->esquerda = nova;
+				return 1;
+			}
+			aux = aux->esquerda;
+		}else{
+			if(aux->direita == NULL){
+				aux->direita = nova;
+				return 1;
+			}
+			aux = aux->direita;
+		}
+	}
+	return 0;
+}
+
+void emOrdem(NO** raiz){
+	if((*raiz)!= NULL){
+		emOrdem(&(*raiz)->esquerda);
+		printf("\n%d",(*raiz)->info);
+		emOrdem(&(*raiz)->direita);
+	}
+}
+
+void preOrdem(NO** raiz){
+    if((*raiz) != NULL){
+        printf("\n%d", (*raiz)->info);
+        preOrdem(&(*raiz)->direita);
+        preOrdem(&(*raiz)->esquerda);
+    }
+}
+
+void posOrdem(NO** raiz){
+    if((*raiz) != NULL){
+        posOrdem(&(*raiz)->esquerda);
+        posOrdem(&(*raiz)->direita);
+        printf("\n%d", (*raiz)->info);
+    }
+}
+
+int contarNos(NO* raiz){
+   if(raiz == NULL)
+        return 0;
+   else
+        return 1 + contarNos(raiz->esquerda) + contarNos(raiz->direita);
+}
+
+int maior(int a, int b){
+    if(a > b)
+        return a;
+    else
+        return b;
+}
+
+int altura(NO* raiz){
+   if((raiz == NULL) || (raiz->esquerda == NULL && raiz->direita == NULL))
+       return 0;
+   else
+       return 1 + maior(altura(raiz->esquerda), altura(raiz->direita));
+}
+
