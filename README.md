@@ -4,14 +4,15 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 
 ## Algoritmos :pushpin:
 
-- [x] **[Max_min](./Max_min/max_min.c)**
+- [x] **[Max_min](./Max_min/max_min.c)** :white_check_mark:
 - [ ] **[Shell Sort](./Shell_Sort/shell_sort.c)** :hourglass:
 - [ ] **[Selection Sort](./Selection_Sort/selection_sort.c)** :hourglass:
 - [ ] **[Quick Sort](./Quick_Sort/quick_sort.c)** :hourglass:
 - [ ] Insertion Sort :hourglass:
 - [ ] Merge Sort :hourglass:
 - [ ] Heap Sort :hourglass:
-- [ ] **[Sequencial_Binário](./Sequencial_Binario/sequencial_binario.c)** :hourglass:
+- [ ] **[Árvore](./Sequencial_Binario/sequencial_binario.c)** :hourglass:
+- [ ] **[Tabela Hash](./Tabela_Hash/tabela_hash.c)** :hourglass:
 
 ## Resultados :clipboard:
 
