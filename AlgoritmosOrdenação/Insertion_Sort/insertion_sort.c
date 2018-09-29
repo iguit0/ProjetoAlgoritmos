@@ -4,25 +4,23 @@
 
 // https://github.com/iguit0/Projeto-De-Algoritmos
 
-void selection_sort(int* elementos, int n) {
+void insertion_sort(int* elementos, int n) {
     int i,j;
-    for (i = 0; i < n-1; i++) {
-        int min_index = i;
-        for (j = i+1; j <= n; j++) {
-            if (elementos[min_index] > elementos[j]) {
-                min_index = j;
-            }
+    for(i=1;i<n;i++){
+        j = i-1;
+        int x = elementos[i];
+        while(x < elementos[j] && j >= 0){
+            elementos[j+1] = elementos[j];
+            elementos[j] = x;
+            j--;
         }
-        int temp = elementos[i];
-        elementos[i] = elementos[min_index];
-        elementos[min_index] = temp;
     }
 }
 
 int main() {
     FILE* f;
     int i=0, n=1000000;
-    f =  fopen("crescente/entrada-crescente-1000000.txt","r");
+    f =  fopen("decrescente/entrada-decrescente-1000000.txt","r");
 	if (f == NULL) {
   	     printf("\nErro na abertura do arquivo!");
          exit(1);
@@ -36,7 +34,7 @@ int main() {
     }
 
     clock_t ini = clock(), fim;
-    selection_sort(elementos,n);
+    insertion_sort(elementos, n);
     fim = clock();
     double tempo = ((double) (fim - ini)) / CLOCKS_PER_SEC;
     printf("\nTempo consumido: %lf sec.\n", tempo);
