@@ -4,38 +4,38 @@
 
 // https://github.com/iguit0/Projeto-De-Algoritmos
 
-void intercala(int p, int q, int r, int v[])
-{
-   int i, j, k, *w;
-   w = (int*) malloc ((r-p) * sizeof (int));
-   i = p; j = q;
-   k = 0;
+void merge(int vetor[], int tamanho) {
+  int meio = tamanho / 2;
+  int i = 0, j = meio, k = 0;
+  int aux[tamanho];
 
-	while (i < q && j < r) {
-		if (v[i] <= v[j]){
-	  		w[k++] = v[i++];
-		}
-	  	else  w[k++] = v[j++];
-	}
-	while (i < q){
-		w[k++] = v[i++];
-	}
-	while (j < r){
-		w[k++] = v[j++];
-	}
-	for (i = p; i < r; ++i){
-		v[i] = w[i-p];
-	}
-	free (w);
+  while( i < meio && j < tamanho ){
+    if( vetor[i] <= vetor[j] )
+      aux[k] = vetor[i++];
+    else
+      aux[k] = vetor[j++];
+    k++;
+  }
+
+  if( i == meio )
+    while( j < tamanho )
+      aux[k++] = vetor[j++];
+  else
+    while( i < meio )
+      aux[k++] = vetor[i++];
+
+  for( i = 0; i < tamanho; i++ )
+    vetor[i] = aux[i];
 }
 
-void merge_sort(int p, int r, int v[]){
-   if (p < r-1) {                 // 1
-      int q = (p + r)/2;          // 2
-      merge_sort(p, q, v);         // 3
-      merge_sort(q, r, v);         // 4
-      intercala(p, q, r, v);      // 5
-   }
+int mergeSort(int vetor[], int tamanho){
+	int meio = tamanho / 2;
+
+	if( tamanho > 1 ){
+		mergeSort(vetor, meio);
+		mergeSort(vetor + meio, tamanho - meio);
+		merge(vetor, tamanho);
+	}
 }
 
 int main() {
@@ -55,7 +55,7 @@ int main() {
     }
 
     clock_t ini = clock(), fim;
-    
+    mergeSort(elementos,n);
     fim = clock();
     double tempo = ((double) (fim - ini)) / CLOCKS_PER_SEC;
     printf("\nTempo consumido: %lf sec.\n", tempo);
