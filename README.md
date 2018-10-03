@@ -8,9 +8,12 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 - [x] **[Shell Sort](./AlgoritmosOrdenação/Shell_Sort/shell_sort.c)** :white_check_mark:
 - [x] **[Selection Sort](./AlgoritmosOrdenação/Selection_Sort/selection_sort.c)** :white_check_mark:
 - [x] **[Insertion Sort](./AlgoritmosOrdenação/Insertion_Sort/insertion_sort.c)** :white_check_mark:
-- [ ] **[Quick Sort](./AlgoritmosOrdenação/Quick_Sort/quick_sort.c)** :hourglass:
-- [ ] **[Merge Sort](./AlgoritmosOrdenação/Merge_Sort/merge_sort.c)** :hourglass:
-- [ ] **[Heap Sort](./AlgoritmosOrdenação/Heap_Sort/heap_sort.c)** :hourglass:
+- [ ] **[Quick Sort - Pivô como final do vetor](./AlgoritmosOrdenação/Quick_Sort/quick_sort.c)** :hourglass:
+- [ ] **[Quick Sort - Pivô como mediana de três valores aleatórios](./AlgoritmosOrdenação/Quick_Sort/quick_sort.c)** :hourglass:
+- [ ] **[Quick Sort - Pivô como valor do meio](./AlgoritmosOrdenação/Quick_Sort/quick_sort.c)** :hourglass:
+- [ ] **[Quick Sort - Pivô como valor randômico](./AlgoritmosOrdenação/Quick_Sort/quick_sort.c)** :hourglass:
+- [x] **[Merge Sort](./AlgoritmosOrdenação/Merge_Sort/merge_sort.c)** :white_check_mark:
+- [x] **[Heap Sort](./AlgoritmosOrdenação/Heap_Sort/heap_sort.c)** :white_check_mark:
 
 ## Para fazer :pencil:
 - [ ] **[Árvore](./Sequencial_Binario/sequencial_binario.c)** :hourglass:
