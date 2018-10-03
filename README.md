@@ -9,8 +9,8 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 - [x] **[Selection Sort](./AlgoritmosOrdenação/Selection_Sort/selection_sort.c)** :white_check_mark:
 - [x] **[Insertion Sort](./AlgoritmosOrdenação/Insertion_Sort/insertion_sort.c)** :white_check_mark:
 - [ ] **[Quick Sort](./AlgoritmosOrdenação/Quick_Sort/quick_sort.c)** :hourglass:
-- [ ] Merge Sort :hourglass:
-- [ ] Heap Sort :hourglass:
+- [ ] **[Merge Sort](./AlgoritmosOrdenação/Merge_Sort/merge_sort.c)** :hourglass:
+- [ ] **[Heap Sort](./AlgoritmosOrdenação/Heap_Sort/heap_sort.c)** :hourglass:
 
 ## Para fazer :pencil:
 - [ ] **[Árvore](./Sequencial_Binario/sequencial_binario.c)** :hourglass:
