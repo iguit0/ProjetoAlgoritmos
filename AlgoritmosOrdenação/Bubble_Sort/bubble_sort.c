@@ -20,7 +20,7 @@ void bubble_sort(int vetor[], int tam) {
 int main() {
     FILE* f;
     int i=0, n=1000000;
-    f =  fopen("aleatorio/entrada-aleatorio-10.txt","r");
+    f =  fopen("decrescente/entrada-decrescente-1000000.txt","r");
 	if (f == NULL) {
   	     printf("\nErro na abertura do arquivo!");
          exit(1);

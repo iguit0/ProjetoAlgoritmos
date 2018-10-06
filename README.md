@@ -5,14 +5,14 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 ## Algoritmos :pushpin:
 
 - [x] **[Max_min](./Max_min/max_min.c)** :white_check_mark:
-- [x] **[Shell Sort](./AlgoritmosOrdenação/Shell_Sort/shell_sort.c)** :white_check_mark:
-- [x] **[Selection Sort](./AlgoritmosOrdenação/Selection_Sort/selection_sort.c)** :white_check_mark:
 - [x] **[Insertion Sort](./AlgoritmosOrdenação/Insertion_Sort/insertion_sort.c)** :white_check_mark:
-- [ ] **[Quick Sort - Pivô como final do vetor](./AlgoritmosOrdenação/Quick_Sort/quick_sort.c)** :hourglass:
-- [ ] **[Quick Sort - Pivô como mediana de três valores aleatórios](./AlgoritmosOrdenação/Quick_Sort/quick_sort.c)** :hourglass:
-- [ ] **[Quick Sort - Pivô como valor do meio](./AlgoritmosOrdenação/Quick_Sort/quick_sort.c)** :hourglass:
-- [ ] **[Quick Sort - Pivô como valor randômico](./AlgoritmosOrdenação/Quick_Sort/quick_sort.c)** :hourglass:
+- [x] **[Selection Sort](./AlgoritmosOrdenação/Selection_Sort/selection_sort.c)** :white_check_mark:
+- [x] **[Shell Sort](./AlgoritmosOrdenação/Shell_Sort/shell_sort.c)** :white_check_mark:
 - [x] **[Merge Sort](./AlgoritmosOrdenação/Merge_Sort/merge_sort.c)** :white_check_mark:
+- [x] **[Quick Sort - Pivô como final do vetor](./AlgoritmosOrdenação/Quick_Sort/quick_sort_final/quick_final.c)** :white_check_mark:
+- [x] **[Quick Sort - Pivô como mediana de três valores aleatórios](./AlgoritmosOrdenação/Quick_Sort/quick_sort_mediana/quick_mediana.c)** :white_check_mark:
+- [x] **[Quick Sort - Pivô como valor do meio](./AlgoritmosOrdenação/Quick_Sort/quick_sort_meio/quick_meio.c)** :white_check_mark:
+- [x] **[Quick Sort - Pivô como valor randômico](./AlgoritmosOrdenação/Quick_Sort/quick_sort_random/quick_random.c)** :white_check_mark:
 - [x] **[Heap Sort](./AlgoritmosOrdenação/Heap_Sort/heap_sort.c)** :white_check_mark:
 
 ## Para fazer :pencil:
@@ -26,4 +26,5 @@ Em breve...
 ## Referências :books:
 
 - ZIVIANI, Nivio. Projeto de algoritmos: implementações em Java e C++. Thomsom Learning. 2006.
-- Cormen, Thomas H.; Leiserson, Charles E.; Rivest, Ronald L.; Stein, Clifford (2009). Introduction to Algorithms (3rd ed.). MIT Press and McGraw-Hill
+- Cormen, Thomas H.; Leiserson, Charles E.; Rivest, Ronald L.; Stein, Clifford (2009). Introduction to Algorithms (3rd ed.). MIT Press and McGraw-Hill.
+- Donald Knuth. The Art of Computer Programming, Volume 3: Sorting and Searching, Third Edition. Addison-Wesley, 1997.
