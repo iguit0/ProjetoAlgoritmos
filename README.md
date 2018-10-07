@@ -23,8 +23,20 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 
 Em breve...
 
+## Casos de Teste :package:
+
+- [Entradas usadas nos algoritmos de ordenação](https://drive.google.com/drive/folders/1mhMAqrBD70402xWa8RT5XtyUza5q-ozY)
+
 ## Referências :books:
 
 - ZIVIANI, Nivio. Projeto de algoritmos: implementações em Java e C++. Thomsom Learning. 2006.
 - Cormen, Thomas H.; Leiserson, Charles E.; Rivest, Ronald L.; Stein, Clifford (2009). Introduction to Algorithms (3rd ed.). MIT Press and McGraw-Hill.
 - Donald Knuth. The Art of Computer Programming, Volume 3: Sorting and Searching, Third Edition. Addison-Wesley, 1997.
+- COLE, Richard. Parallel merge sort. SIAM Journal on Computing, v. 17, n. 4, p. 770-785, 1988.
+- FEOFILOFF, Paulo. Algoritmos em linguagem C. Elsevier Brasil, 2009.
+- ASTRACHAN, Owen. Bubble sort: an archaeological algorithmic analysis. In: ACM SIGCSE Bulletin. ACM, 2003. p. 1-5.
+- GARCIA, Adriano M.; CERA, Márcia C.; MERGEN, Sérgio LS. Analisando o Desempenho da Paralelização no Algoritmo de Ordenação Mergesort In-place. 13a. p. 123-126, 2013.
+- HOARE, Charles AR. Quicksort. The Computer Journal, v. 5, n. 1, p. 10-16, 1962.
+- SEDGEWICK, Robert. Implementing quicksort programs. Communications of the ACM, v. 21, n. 10, p. 847-857, 1978.
+- WEGENER, Ingo. BOTTOM-UP-HEAPSORT, a new variant of HEAPSORT beating, on an average, QUICKSORT (if n is not very small). Theoretical Computer Science, v. 118, n. 1, p. 81-98, 1993.
+- SCHAFFER, Russel; SEDGEWICK, Robert. The analysis of heapsort. Journal of Algorithms, v. 15, n. 1, p. 76-100, 1993.
