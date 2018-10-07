@@ -14,7 +14,7 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 - [x] **[Quick Sort - Pivô como valor do meio](./AlgoritmosOrdenação/Quick_Sort/quick_sort_meio/quick_meio.c)** :white_check_mark:
 - [x] **[Quick Sort - Pivô como valor randômico](./AlgoritmosOrdenação/Quick_Sort/quick_sort_random/quick_random.c)** :white_check_mark:
 - [x] **[Heap Sort](./AlgoritmosOrdenação/Heap_Sort/heap_sort.c)** :white_check_mark:
-
+- [x] **[Bubble Sort](./AlgoritmosOrdenação/Bubble_Sort/bubble_sort.c)** :white_check_mark:
 ## Para fazer :pencil:
 - [ ] **[Árvore](./Sequencial_Binario/sequencial_binario.c)** :hourglass:
 - [ ] **[Tabela Hash](./Tabela_Hash/tabela_hash.c)** :hourglass:
