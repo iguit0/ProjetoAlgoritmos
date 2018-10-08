@@ -21,7 +21,7 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 
 ## Resultados :clipboard:
 
-Em breve...
+- **[Relatório Ordenação](./RelatórioOrdenação.pdf)** :white_check_mark:
 
 ## Casos de Teste :package:
 

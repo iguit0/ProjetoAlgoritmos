@@ -5,7 +5,6 @@
 // https://github.com/iguit0/Projeto-De-Algoritmos
 
 int partition_final(int a[], int p, int r){
-
 	int j= r+1, aux;
     int pivot = a[r];
     int i = p-1;
