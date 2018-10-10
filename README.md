@@ -16,8 +16,13 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 - [x] **[Heap Sort](./AlgoritmosOrdenação/Heap_Sort/heap_sort.c)** :white_check_mark:
 - [x] **[Bubble Sort](./AlgoritmosOrdenação/Bubble_Sort/bubble_sort.c)** :white_check_mark:
 ## Para fazer :pencil:
-- [ ] **[Árvore](./Sequencial_Binario/sequencial_binario.c)** :hourglass:
-- [ ] **[Tabela Hash](./Tabela_Hash/tabela_hash.c)** :hourglass:
+- [ ] **[Busca Sequencial](https://pt.wikipedia.org/wiki/Busca_linear)** :hourglass:
+- [ ] **[Busca Binária](https://pt.wikipedia.org/wiki/Pesquisa_bin%C3%A1ria)** :hourglass:
+- [ ] **[Tabela Hash](https://pt.wikipedia.org/wiki/Tabela_de_dispers%C3%A3o)** :hourglass:
+- [ ] **[Árvore Binária de Busca](https://pt.wikipedia.org/wiki/%C3%81rvore_bin%C3%A1ria_de_busca)** :hourglass:
+- [ ] **[Algoritmo de Dijkstra](https://pt.wikipedia.org/wiki/Algoritmo_de_Dijkstra)** :hourglass:
+- [ ] **[Grafo](https://pt.wikipedia.org/wiki/Teoria_dos_grafos)** :hourglass:
+- [ ] **[Busca em Grafos](http://www.professeurs.polymtl.ca/michel.gagnon/Disciplinas/Bac/Grafos/Busca/busca.html)** :hourglass:
 
 ## Resultados :clipboard:
 
