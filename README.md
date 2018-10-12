@@ -15,8 +15,8 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 - [x] **[Quick Sort - Pivô como valor randômico](./AlgoritmosOrdenação/Quick_Sort/quick_sort_random/quick_random.c)** :white_check_mark:
 - [x] **[Heap Sort](./AlgoritmosOrdenação/Heap_Sort/heap_sort.c)** :white_check_mark:
 - [x] **[Bubble Sort](./AlgoritmosOrdenação/Bubble_Sort/bubble_sort.c)** :white_check_mark:
+- [x] **[Busca Sequencial](./busca_sequencial.c)** :white_check_mark:
 ## Para fazer :pencil:
-- [ ] **[Busca Sequencial](https://pt.wikipedia.org/wiki/Busca_linear)** :hourglass:
 - [ ] **[Busca Binária](https://pt.wikipedia.org/wiki/Pesquisa_bin%C3%A1ria)** :hourglass:
 - [ ] **[Tabela Hash](https://pt.wikipedia.org/wiki/Tabela_de_dispers%C3%A3o)** :hourglass:
 - [ ] **[Árvore Binária de Busca](https://pt.wikipedia.org/wiki/%C3%81rvore_bin%C3%A1ria_de_busca)** :hourglass:
