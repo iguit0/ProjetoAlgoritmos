@@ -23,7 +23,7 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 - [ ] **[Algoritmo de Dijkstra](https://pt.wikipedia.org/wiki/Algoritmo_de_Dijkstra)** :hourglass:
 - [ ] **[Grafo](https://pt.wikipedia.org/wiki/Teoria_dos_grafos)** :hourglass:
 - [ ] **[Busca em Grafos](http://www.professeurs.polymtl.ca/michel.gagnon/Disciplinas/Bac/Grafos/Busca/busca.html)** :hourglass:
-
+- [ ] **[Algoritmo de Prim](https://pt.wikipedia.org/wiki/Algoritmo_de_Prim)** :hourglass:
 ## Resultados :clipboard:
 
 - **[Relatório Ordenação](./RelatórioOrdenação.pdf)** :white_check_mark:
