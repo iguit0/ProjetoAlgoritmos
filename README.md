@@ -20,9 +20,11 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 - [ ] **[Busca Binária](https://pt.wikipedia.org/wiki/Pesquisa_bin%C3%A1ria)** :hourglass:
 - [ ] **[Tabela Hash](https://pt.wikipedia.org/wiki/Tabela_de_dispers%C3%A3o)** :hourglass:
 - [ ] **[Árvore Binária de Busca](https://pt.wikipedia.org/wiki/%C3%81rvore_bin%C3%A1ria_de_busca)** :hourglass:
-- [ ] **[Algoritmo de Dijkstra](https://pt.wikipedia.org/wiki/Algoritmo_de_Dijkstra)** :hourglass:
-- [ ] **[Grafo](https://pt.wikipedia.org/wiki/Teoria_dos_grafos)** :hourglass:
-- [ ] **[Busca em Grafos](http://www.professeurs.polymtl.ca/michel.gagnon/Disciplinas/Bac/Grafos/Busca/busca.html)** :hourglass:
+- [ ] **[Algoritmo de Kruskal](https://pt.wikipedia.org/wiki/Algoritmo_de_Kruskal)** :hourglass:
+- [x] **[Grafo](https://pt.wikipedia.org/wiki/Teoria_dos_grafos)** :hourglass:
+- [x] **[Busca em Largura](https://pt.wikipedia.org/wiki/Busca_em_largura)** :hourglass:
+- [x] **[Busca em Profundidade](https://pt.wikipedia.org/wiki/Busca_em_profundidade)** :hourglass:
+- [x] **[Algoritmo de Dijkstra](https://pt.wikipedia.org/wiki/Algoritmo_de_Dijkstra)** :hourglass:
 - [x] **[Algoritmo de Prim](https://pt.wikipedia.org/wiki/Algoritmo_de_Prim)** :hourglass:
 ## Resultados :clipboard:
 
@@ -30,7 +32,7 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 
 ## Casos de Teste :package:
 
-- [Entradas usadas nos algoritmos de ordenação](https://drive.google.com/drive/folders/1mhMAqrBD70402xWa8RT5XtyUza5q-ozY)
+- **[Entradas usadas nos algoritmos de ordenação](https://drive.google.com/drive/folders/1mhMAqrBD70402xWa8RT5XtyUza5q-ozY)**
 
 ## Referências :books:
 
@@ -45,3 +47,4 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 - SEDGEWICK, Robert. Implementing quicksort programs. Communications of the ACM, v. 21, n. 10, p. 847-857, 1978.
 - WEGENER, Ingo. BOTTOM-UP-HEAPSORT, a new variant of HEAPSORT beating, on an average, QUICKSORT (if n is not very small). Theoretical Computer Science, v. 118, n. 1, p. 81-98, 1993.
 - SCHAFFER, Russel; SEDGEWICK, Robert. The analysis of heapsort. Journal of Algorithms, v. 15, n. 1, p. 76-100, 1993.
+- Jon Kleinberg , Eva Tardos, Algorithm Design, Addison-Wesley Longman Publishing Co., Inc., Boston, MA, 2005
