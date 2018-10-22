@@ -1,6 +1,4 @@
-// Grafo.h - Cabeçalho Grafo
-
-// https://github.com/iguit0/Projeto-De-Algoritmos
+// Grafo.h - Cabeçalho
 
 typedef struct grafo Grafo;
 
@@ -17,3 +15,4 @@ void menorCaminho_Grafo(Grafo *gr, int ini, int *antecessor, float *distancia);
 void imprime_Grafo(Grafo *gr);
 
 void algPRIM_Grafo(Grafo *gr, int orig, int *pai);
+void algKRUSKAL_Grafo(Grafo *gr, int orig, int *pai);

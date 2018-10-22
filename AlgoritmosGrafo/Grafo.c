@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include "Grafo.h"
 
-// https://github.com/iguit0/Projeto-De-Algoritmos
-
 // TAD Grafo
 struct grafo {
     int eh_ponderado;
@@ -114,7 +112,7 @@ void imprime_Grafo(Grafo *gr){
 
 /*
 Algoritmos para Grafos em C
-via Sedgewick
+ via Sedgewick
 http://www.ime.usp.br/~pf/algoritmos_para_grafos/
 */
 // https://www.cs.auckland.ac.nz/software/AlgAnim/dijkstra.html
@@ -220,8 +218,6 @@ void buscaLargura_Grafo(Grafo *gr, int ini, int *visitado){
         printf("%d -> %d\n",i,visitado[i]);
 }
 
-// https://pt.wikipedia.org/wiki/Algoritmo_de_Prim
-
 void algPRIM_Grafo(Grafo *gr, int orig, int *pai) {
     int i, j, dest, primeiro, NV = gr->nro_vertices; // NV = numero de vertices
     double menorPeso;
@@ -272,6 +268,53 @@ void algPRIM_Grafo(Grafo *gr, int orig, int *pai) {
         }
         pai[dest] = orig;
     }
+}
+
+void algKRUSKAL_Grafo(Grafo *gr, int orig, int *pai) {
+    int i,j,dest,primeiro,NV = gr->nro_vertices; // NV = numero de vertices
+    double menorPeso;
+    int* arv = (int *) malloc(NV*sizeof(sizeof(int)));
+    for(i=0;i<NV;i++){
+        arv[i] = i; // cada vértice recebe seu proprio numero sendo o identificador da sua arvore
+        pai[i] = -1; // sem pai
+    }
+    pai[orig] = orig;
+    while(1) {
+        primeiro = 1;
+        for(i=0;i<NV;i++) { // percorre os vertices
+            for(j=0;j<gr->grau[i];j++){ //arestas
+                // procura vértice menor peso
+                if(arv[i] != arv[gr->arestas[i][j]]){
+                    if(primeiro){
+                        menorPeso = gr->pesos[i][j];
+                        orig = i;
+                        dest = gr->arestas[i][j];
+                        primeiro = 0;
+                    }else{
+                        if(menorPeso > gr->pesos[i][j]){
+                            menorPeso = gr->pesos[i][j];
+                            orig = i;
+                            dest = gr->arestas[i][j];
+                        }
+                    }
+                }
+            }
+        }
+        if(primeiro == 1){
+            break;
+        }
+        if(pai[orig] == -1) {
+            pai[orig] = dest;
+        } else {
+            pai[dest] = orig;
+        }
+        for(i=0;i<NV;i++){
+            if(arv[i] == arv[dest]){
+                arv[i] = arv[orig];
+            }
+        }
+    }
+    free(arv);
 }
 
 /* OUTRA VERSAO
