@@ -24,8 +24,7 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 - [x] **[Algoritmo de Prim](https://pt.wikipedia.org/wiki/Algoritmo_de_Prim)** :hourglass:
 ## Para fazer :pencil:
 - [ ] **[Tabela Hash](https://pt.wikipedia.org/wiki/Tabela_de_dispers%C3%A3o)** :hourglass:
-- [ ] **[Busca Binária](https://pt.wikipedia.org/wiki/Pesquisa_bin%C3%A1ria)** :hourglass:
-- [ ] **[Árvore Binária de Busca](https://pt.wikipedia.org/wiki/%C3%81rvore_bin%C3%A1ria_de_busca)** :hourglass:
+- [ ] **MST Clustering** :hourglass:
 ## Resultados :clipboard:
 
 - **[Relatório Ordenação](./RelatórioOrdenação.pdf)** :white_check_mark:
