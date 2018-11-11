@@ -4,9 +4,9 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 
 ## Algoritmos :pushpin:
 
-- [x] **[Algoritmos de Ordenação](./AlgoritmosOrdenação)** :white_check_mark:
+- [x] **[Algoritmos de Ordenação](./Ordenação)** :white_check_mark:
 ## Para fazer :pencil:
-- [ ] **[Árvores Geradoras Mínimas aplicadas a Agrupamento de Dados](https://www.maxwell.vrac.puc-rio.br/24787/24787_5.PDF)** :hourglass:
+- [ ] **[Árvores Geradoras Mínimas aplicadas a Agrupamento de Dados](./Clustering)** :hourglass:
 ## Resultados :clipboard:
 
 - **[Relatório Ordenação](./RelatórioOrdenação.pdf)** :white_check_mark:
