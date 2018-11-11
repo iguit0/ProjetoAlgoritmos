@@ -4,27 +4,9 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 
 ## Algoritmos :pushpin:
 
-- [x] **[Max_min](./Max_min/max_min.c)** :white_check_mark:
-- [x] **[Insertion Sort](./AlgoritmosOrdenação/Insertion_Sort/insertion_sort.c)** :white_check_mark:
-- [x] **[Selection Sort](./AlgoritmosOrdenação/Selection_Sort/selection_sort.c)** :white_check_mark:
-- [x] **[Shell Sort](./AlgoritmosOrdenação/Shell_Sort/shell_sort.c)** :white_check_mark:
-- [x] **[Merge Sort](./AlgoritmosOrdenação/Merge_Sort/merge_sort.c)** :white_check_mark:
-- [x] **[Quick Sort - Pivô como final do vetor](./AlgoritmosOrdenação/Quick_Sort/quick_sort_final/quick_final.c)** :white_check_mark:
-- [x] **[Quick Sort - Pivô como mediana de três valores aleatórios](./AlgoritmosOrdenação/Quick_Sort/quick_sort_mediana/quick_mediana.c)** :white_check_mark:
-- [x] **[Quick Sort - Pivô como valor do meio](./AlgoritmosOrdenação/Quick_Sort/quick_sort_meio/quick_meio.c)** :white_check_mark:
-- [x] **[Quick Sort - Pivô como valor randômico](./AlgoritmosOrdenação/Quick_Sort/quick_sort_random/quick_random.c)** :white_check_mark:
-- [x] **[Heap Sort](./AlgoritmosOrdenação/Heap_Sort/heap_sort.c)** :white_check_mark:
-- [x] **[Bubble Sort](./AlgoritmosOrdenação/Bubble_Sort/bubble_sort.c)** :white_check_mark:
-- [x] **[Busca Sequencial](./busca_sequencial.c)** :white_check_mark:
-- [x] **[Algoritmo de Kruskal](https://pt.wikipedia.org/wiki/Algoritmo_de_Kruskal)** :hourglass:
-- [x] **[Grafo](https://pt.wikipedia.org/wiki/Teoria_dos_grafos)** :hourglass:
-- [x] **[Busca em Largura](https://pt.wikipedia.org/wiki/Busca_em_largura)** :hourglass:
-- [x] **[Busca em Profundidade](https://pt.wikipedia.org/wiki/Busca_em_profundidade)** :hourglass:
-- [x] **[Algoritmo de Dijkstra](https://pt.wikipedia.org/wiki/Algoritmo_de_Dijkstra)** :hourglass:
-- [x] **[Algoritmo de Prim](https://pt.wikipedia.org/wiki/Algoritmo_de_Prim)** :hourglass:
+- [x] **[Algoritmos de Ordenação](./AlgoritmosOrdenação)** :white_check_mark:
 ## Para fazer :pencil:
-- [ ] **[Tabela Hash](https://pt.wikipedia.org/wiki/Tabela_de_dispers%C3%A3o)** :hourglass:
-- [ ] **MST Clustering** :hourglass:
+- [ ] **[Árvores Geradoras Mínimas aplicadas a Agrupamento de Dados](https://www.maxwell.vrac.puc-rio.br/24787/24787_5.PDF)** :hourglass:
 ## Resultados :clipboard:
 
 - **[Relatório Ordenação](./RelatórioOrdenação.pdf)** :white_check_mark:
@@ -32,6 +14,7 @@ A ordenação ou classificação de dados consiste em receber um montante de dad
 ## Casos de Teste :package:
 
 - **[Entradas usadas nos algoritmos de ordenação](https://drive.google.com/drive/folders/1mhMAqrBD70402xWa8RT5XtyUza5q-ozY)**
+- **[Entrada usada no algoritmo de agrupamento de dados (*clustering*)](https://drive.google.com/file/d/19ELrq7mZbksrEBWesXQltkcS1JyMO2v4/view)**
 
 ## Referências :books:
 
