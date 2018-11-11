@@ -2,6 +2,8 @@
 
 A ordenação ou classificação de dados consiste em receber um montante de dados e organizá-los em ordem crescente e/ou decrescente, a fim de utiliza-los posteriormente. Essa ordenação tem o objetivo de facilitar as buscas e pesquisas por um elemento em um conjunto ordenado. Na computação existe uma série de algoritmos de ordenação, sendo eles de diferentes comportamentos e complexidades, sendo assim, devemos nos atentar ao problema e só depois escolher qual método usar para solucioná-lo.
 
+A Clusterização de Dados ou Análise de Agrupamentos é uma técnica de mineração de dados multivariados que através de métodos numéricos e a partir somente das informações das variáveis de cada caso, tem por objetivo agrupar automaticamente por aprendizado não supervisionado os n casos da base de dados em k grupos, geralmente disjuntos denominados *clusters* ou agrupamentos. 
+
 ## Algoritmos :pushpin:
 
 - [x] **[Algoritmos de Ordenação](./Ordenação)** :white_check_mark:
