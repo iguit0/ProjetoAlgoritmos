@@ -28,6 +28,7 @@ typedef struct sGrafo {
     int numArestas;
 } GRAFO;
 
+CELULA* criarCelula(int dest);
 GRAFO* criaGrafo(int numVertices);
 void inserirAresta(GRAFO* grafo,int u,int v,double peso);
 void imprimeGrafo(GRAFO* grafo);
@@ -104,6 +105,7 @@ void inserirAresta(GRAFO* grafo, int u,int v,double peso) {
 }
 
 // Imprimir a lista de adjacencia do grafo
+// V[numero do vertice]: aresta(peso) ->
 void imprimeGrafo(GRAFO* g) {
 	int v;
 	for (v = 0; v < g->numVertices; ++v) {
