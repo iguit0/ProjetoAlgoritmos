@@ -104,31 +104,68 @@ void imprimirGrafo(GRAFO* grafo){
 	}
 }
 
+void removeAresta(GRAFO* g,int orig,int dest){
+    if(g==NULL){
+        return;
+    }
+    int i;
+    for(i=0;i<g->numVertices;i++){
+        CELULA* aux = g[i].adj.primeiro;
+        // caso seja o primeiro no da lista
+        if(aux->info.vertice == dest){
+            g[i].adj.primeiro = aux->prox;
+            free(aux);
+        }else{
+            CELULA* prev = aux;
+            aux = aux->prox;
+            while(aux!=NULL){
+                if(aux->info.vertice == dest){
+                    prev->prox = aux->prox;
+                    free(aux);
+                    break;
+                }
+                prev = aux;
+                aux = aux->prox;
+
+            }
+        }
+    }
+    g->numArestas--;
+}
+
+
+/* Parte de um vértice inicialmente na árvore, o algoritmo procura
+* a aresta de menor peso que conecte um vértice da árvore a outro
+* que ainda não esteja na árvore. Esse vértice é então adicionado
+* na árvore e o processo se repete até que todos os vértices
+* façam parte da árvore ou quando não se pode encontrar uma
+* aresta que satisfaça essa condição.
+*/
+
+
 int main() {
-    GRAFO* gr = criaGrafo(150,22500);
+    GRAFO* gr = criaGrafo(3,0);
     FILE* f;
     int u,v;
     double w;
-    f = fopen("dados.txt","r");
+    f = fopen("entrada-teste.txt","r");
     if(f == NULL){
         printf("Erro na abertura do arquivo!\n");
         exit(1);
     }
-    int i=0;
-    printf("\tG(%d,%d)\n",gr->numVertices,gr->numArestas);
-
-    while(fscanf(f,"%d %d %lf",&u,&v,&w)!=EOF){
+    while(fscanf(f,"%d %d %lf",&u,&v,&w) != EOF) {
         inserirAresta(gr,u,v,w);
         //printf("%d %d %.2lf\n",u,v,w);
     }
-    /*
-    //outra forma de ler o arquivo
-    for(i=0;i<22500;i++){
-        fscanf(f,"%d %d %lf",&u,&v,&w);
-        //printf("%d %d %lf\n",u,v,w);
-        inserirAresta(gr,u,v,w);
-    }*/
+    printf("\t\t\tG(%d,%d)\n",gr->numVertices,gr->numArestas);
+    imprimirGrafo(gr);
+    removeAresta(gr,0,0);
+    printf("\n\tDepois de remover aresta (0,0)\n\n");
+    printf("\t\t\tG(%d,%d)\n",gr->numVertices,gr->numArestas);
     imprimirGrafo(gr);
 
+
+    free(gr);
+    gr = NULL;
     return 0;
 }
