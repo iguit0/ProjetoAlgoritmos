@@ -59,7 +59,7 @@ int inserir(LISTA* lista,int v,double w){
         printf("A aresta ja existe!\n");
         return 0;
     }
-    CELULA* p = (CELULA *) malloc(sizeof(CELULA));
+    CELULA* p = (CELULA*) malloc(sizeof(CELULA));
     if(p==NULL){
         printf("Nao foi possivel alocar!\n");
         return 0;
@@ -105,30 +105,30 @@ void imprimirGrafo(GRAFO* grafo){
 }
 
 int main() {
-    GRAFO* gr = criaGrafo(3,9);
+    GRAFO* gr = criaGrafo(150,22500);
     FILE* f;
     int u,v;
     double w;
-    f = fopen("entrada-teste.txt","r");
+    f = fopen("dados.txt","r");
     if(f == NULL){
         printf("Erro na abertura do arquivo!\n");
         exit(1);
     }
-    int i;
+    int i=0;
     printf("\tG(%d,%d)\n",gr->numVertices,gr->numArestas);
+
     while(fscanf(f,"%d %d %lf",&u,&v,&w)!=EOF){
         inserirAresta(gr,u,v,w);
-    }
-    //outra forma de ler o arquivo
-    /*for(i=0;i<9;i++){
-        fscanf(f,"%d %d %lf",&u,&v,&w);
         //printf("%d %d %.2lf\n",u,v,w);
+    }
+    /*
+    //outra forma de ler o arquivo
+    for(i=0;i<22500;i++){
+        fscanf(f,"%d %d %lf",&u,&v,&w);
+        //printf("%d %d %lf\n",u,v,w);
         inserirAresta(gr,u,v,w);
     }*/
     imprimirGrafo(gr);
 
-    fclose(f);
-    free(gr);
-    gr = NULL;
     return 0;
 }
