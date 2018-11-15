@@ -108,29 +108,25 @@ void removeAresta(GRAFO* g,int orig,int dest){
     if(g==NULL){
         return;
     }
-    int i;
-    for(i=0;i<g->numVertices;i++){
-        CELULA* aux = g[i].adj.primeiro;
-        // caso seja o primeiro no da lista
-        if(aux->info.vertice == dest){
-            g[i].adj.primeiro = aux->prox;
-            free(aux);
-        }else{
-            CELULA* prev = aux;
-            aux = aux->prox;
-            while(aux!=NULL){
-                if(aux->info.vertice == dest){
-                    prev->prox = aux->prox;
-                    free(aux);
-                    break;
-                }
-                prev = aux;
-                aux = aux->prox;
-
+    CELULA* aux;
+    CELULA* prev;
+    aux = g[orig].adj.primeiro;
+    if(aux->info.vertice == dest){
+        g[orig].adj.primeiro = aux->prox;
+        free(aux);
+    }else{
+        prev = aux;
+        aux = aux->prox;
+        while(aux!=NULL){
+            if(aux->info.vertice==dest){
+                prev->prox = aux->prox;
+                free(aux);
+                break;
             }
+            prev = aux;
+            aux = aux->prox;
         }
     }
-    g->numArestas--;
 }
 
 
@@ -160,7 +156,7 @@ int main() {
     printf("\t\t\tG(%d,%d)\n",gr->numVertices,gr->numArestas);
     imprimirGrafo(gr);
     removeAresta(gr,0,0);
-    printf("\n\tDepois de remover aresta (0,0)\n\n");
+    printf("\n\tDepois de remover o freekick (0,0)\n\n");
     printf("\t\t\tG(%d,%d)\n",gr->numVertices,gr->numArestas);
     imprimirGrafo(gr);
 
