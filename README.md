@@ -12,6 +12,7 @@ A *Clusterização* de Dados ou Análise de Agrupamentos é uma técnica de mine
 ## Resultados :clipboard:
 
 - **[Relatório Ordenação](./RelatórioOrdenação.pdf)** :white_check_mark:
+- **[Relatório Agrupamento](./RelatórioAgrupamento.pdf)** :hourglass:
 
 ## Casos de Teste :package:
 
