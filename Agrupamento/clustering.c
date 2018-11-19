@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#define TAM 22500
+#define QUAT_VERT 150
 
 typedef struct sTipoItem {
     int vertice; // vertice destino
@@ -35,6 +37,87 @@ struct MinHeap {
     int* pos; // necessario para o metodo decreaseKey()
     struct MinHeapNode** array;
 };
+
+// KRUSKAL
+int vetorRotulos[QUAT_VERT];
+
+typedef struct sArestas{
+	int vertice1;
+	int vertice2;
+	double distancia;
+}Arestas;
+
+make_set(int *vetorRotulos){
+	int i;
+	for(i=1;i<=QUAT_VERT;i++){
+		vetorRotulos[i]=i;
+	}
+}
+
+void insertionSort(Arestas *arestas){
+   int i, j;
+   float valorAtual;
+ 
+   for( j=1; j < TAM; j++ ) 
+   {
+      valorAtual = arestas[j].distancia;
+      int vert1 = arestas[j].vertice1;
+      int vert2 =arestas[j].vertice2;
+      i = j-1;
+      
+      while(i >= 0 && arestas[i].distancia > valorAtual)
+      {
+        arestas[i+1].distancia = arestas[i].distancia;
+        arestas[i+1].vertice1 = arestas[i].vertice1;
+        arestas[i+1].vertice2 = arestas[i].vertice2;
+        i--;
+      } 
+              
+      arestas[i+1].distancia = valorAtual;
+      arestas[i+1].vertice1 = vert1;
+      arestas[i+1].vertice2 = vert2;
+   }
+}
+
+void kruskal(Arestas *arestas, int k_grupos){
+	int i,j,aux,aux_k=QUAT_VERT;
+	//Similar ao makeset, considera cada vertice como se fosse uma MST
+	make_set(vetorRotulos);
+	
+	//Ordena as arestas, pelo isertion, eh ineficiente.
+	insertionSort(arestas);
+	
+	//"Une as arestas" que fazem parte de uma arvore diferente, mas so meche com os rotulos
+	
+	for(i=0;i<TAM;i++){
+		if(vetorRotulos[arestas[i].vertice1]!=vetorRotulos[arestas[i].vertice2]){
+			
+			
+			if(aux_k == k_grupos)
+			{
+				break;
+			}
+			aux_k--;
+		  				
+			aux=arestas[i].vertice2;
+			vetorRotulos[arestas[i].vertice2] =vetorRotulos[arestas[i].vertice1];
+			
+			for(j=1;j<=QUAT_VERT;j++){
+				if(vetorRotulos[j]==aux){
+					vetorRotulos[j]=vetorRotulos[arestas[i].vertice1];
+					
+				}
+			}
+		}
+	
+	}
+	printf("\n\t\tKRUSKAL - ROTULOS DOS AGRUPAMENTOS\n\n");
+	for(i=1;i<=QUAT_VERT;i++){
+		printf(" %d ",vetorRotulos[i]);
+	}
+}
+
+// ./KRUSKAL
 
 GRAFO* criaGrafo(int numVertices, int numArestas) {
     int i;
@@ -262,7 +345,7 @@ void decreaseKey(struct MinHeap* minHeap, int v, int key) {
     }
 }
 
-// verificar se o vertice v é min heap ou nao
+// verificar se o vertice v eh min heap ou nao
 int isInMinHeap(struct MinHeap* minHeap, int v) {
     if (minHeap->pos[v] < minHeap->size) return 1;
     else return 0;
@@ -278,12 +361,12 @@ void printArr(int* pai, int n) {
 /* ./ FUNCOES HEAPIFY */
 
 /* ------------ Algoritmo de PRIM ------------
-* Parte de um vértice inicialmente na árvore, o algoritmo procura
-* a aresta de menor peso que conecte um vértice da árvore a outro
-* que ainda não esteja na árvore. Esse vértice é então adicionado
-* na árvore e o processo se repete até que todos os vértices
-* façam parte da árvore ou quando não se pode encontrar uma
-* aresta que satisfaça essa condição. */
+* Parte de um vertice inicialmente na arvore, o algoritmo procura
+* a aresta de menor peso que conecte um vertice da arvore a outro
+* que ainda nao esteja na arvore. Esse vertice eh entao adicionado
+* na arvore e o processo se repete ate que todos os vertices
+* facam parte da arvore ou quando nao se pode encontrar uma
+* aresta que satisfaca essa condicao. */
 void primMST(GRAFO* grafo) {
     int V = grafo->numVertices; // numero dos vertices do grafo
     int parent[V]; // vetor para guardar o resultado da arvore geradora minima
@@ -339,13 +422,15 @@ void primMST(GRAFO* grafo) {
     printArr(parent,V);
 }
 
-int main() {
-    GRAFO* gr = criaGrafo(6,0);
 
+int main() {
+    GRAFO* gr = criaGrafo(QUAT_VERT,0);
+    Arestas* arestas = (Arestas*) malloc(TAM*sizeof(Arestas));
+    
     FILE* f;
     int u,v;
     double w;
-    f = fopen("teste-mst.txt","r");
+    f = fopen("dados.txt","r");
     if(f == NULL){
         printf("Erro na abertura do arquivo!\n");
         exit(1);
@@ -354,11 +439,27 @@ int main() {
         inserirAresta(gr,u,v,w);
         //printf("%d %d %.2lf\n",u,v,w);
     }
-    imprimirGrafo(gr);
-
+    //fclose(f);
+    f = fopen("dados.txt","r");
+    if(f == NULL){
+        printf("Erro na abertura do arquivo!\n");
+        exit(1);
+    }
+    int i=0,k;
+    while(!feof(f)){
+    	fscanf(f,"%d %d %lf", &arestas[i].vertice1,&arestas[i].vertice2,&arestas[i].distancia);
+    	i++;
+	}
+	do{
+		printf("\nQuantidade de grupos (k) > ");
+		scanf("%d",&k);
+	}while(! (k >= 1 && k <= QUAT_VERT));
+	printf("\n");
+    //imprimirGrafo(gr);
     primMST(gr);
-
-    free(gr);
-    gr = NULL;
+    kruskal(arestas,k);
+    
+	//fclose(f);
+	//free(gr);
     return 0;
 }
