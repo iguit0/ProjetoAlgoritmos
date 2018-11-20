@@ -8,7 +8,7 @@ A *Clusterização* de Dados ou Análise de Agrupamentos é uma técnica de mine
 
 - [x] **[Algoritmos de Ordenação](./Ordenação)** :white_check_mark:
 ## Para fazer :pencil:
-- [ ] **[Árvores Geradoras Mínimas aplicadas a Agrupamento de Dados](./Clustering)** :hourglass:
+- [ ] **[Árvores Geradoras Mínimas aplicadas a Agrupamento de Dados](./Agrupamento)** :hourglass:
 ## Resultados :clipboard:
 
 - **[Relatório Ordenação](./RelatórioOrdenação.pdf)** :white_check_mark:
@@ -17,7 +17,7 @@ A *Clusterização* de Dados ou Análise de Agrupamentos é uma técnica de mine
 ## Casos de Teste :package:
 
 - **[Entradas usadas nos algoritmos de ordenação](https://drive.google.com/drive/folders/1mhMAqrBD70402xWa8RT5XtyUza5q-ozY)**
-- **[Entrada usada no algoritmo de agrupamento de dados (*clustering*)](https://drive.google.com/file/d/19ELrq7mZbksrEBWesXQltkcS1JyMO2v4/view)**
+- **[Entrada usada no algoritmo de agrupamento](https://drive.google.com/drive/folders/1QnwZtCITYbQRtDM2Ns5yfWMlZOj8b9HK)**
 
 ## Referências :books:
 
