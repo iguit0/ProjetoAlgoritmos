@@ -84,7 +84,7 @@ void kruskal(Arestas *arestas, int k_grupos){
 	//Similar ao makeset, considera cada vertice como se fosse uma MST
 	make_set(vetorRotulos);
 	
-	//Ordena as arestas, pelo isertion, eh ineficiente.
+	//Ordena as arestas, pelo insertion, eh ineficiente.
 	insertionSort(arestas);
 	
 	//"Une as arestas" que fazem parte de uma arvore diferente, mas so meche com os rotulos
@@ -379,7 +379,7 @@ void primMST(GRAFO* grafo) {
     // valor da chave de todos os vertices eh, inicialmente
     // infinito (INT_MAX) <limits.h> (exceto o primeiro vertice)
     int v;
-    for (v = 1; v < V; ++v) {
+    for (v = 0; v < V; ++v) {
         parent[v] = -1;
         key[v] = INT_MAX;
         minHeap->array[v] = newMinHeapNode(v, key[v]);
@@ -420,6 +420,35 @@ void primMST(GRAFO* grafo) {
 
     printf("\n\t\t PRIM - Arvore geradora minima resultante \n\n");
     printArr(parent,V);
+}
+
+void agrupamentoPrim(Arestas* arestas,int k) {
+	insertionSort(arestas);
+	int aux_k = k;
+	int i,j;
+	int parent[TAM];
+	
+	for(i=0;i<TAM;i++){
+		
+		if(aux_k == k) break;
+		aux_k--;
+		
+		for(j=0;j<QUAT_VERT;j++){
+			
+			
+			
+			
+			
+		}
+		
+		
+		
+		
+	}
+	
+	
+	
+	
 }
 
 
