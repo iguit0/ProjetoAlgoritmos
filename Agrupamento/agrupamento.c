@@ -88,13 +88,10 @@ void kruskal(Arestas *arestas, int k_grupos){
 	insertionSort(arestas);
 	
 	//"Une as arestas" que fazem parte de uma arvore diferente, mas so meche com os rotulos
-	
 	for(i=0;i<TAM;i++){
 		if(vetorRotulos[arestas[i].vertice1]!=vetorRotulos[arestas[i].vertice2]){
 			
-			
-			if(aux_k == k_grupos)
-			{
+			if(aux_k == k_grupos) {
 				break;
 			}
 			aux_k--;
@@ -105,12 +102,11 @@ void kruskal(Arestas *arestas, int k_grupos){
 			for(j=1;j<=QUAT_VERT;j++){
 				if(vetorRotulos[j]==aux){
 					vetorRotulos[j]=vetorRotulos[arestas[i].vertice1];
-					
 				}
 			}
 		}
-	
 	}
+	
 	printf("\n\t\tKRUSKAL - ROTULOS DOS AGRUPAMENTOS\n\n");
 	for(i=1;i<=QUAT_VERT;i++){
 		printf(" %d ",vetorRotulos[i]);
@@ -435,19 +431,8 @@ void agrupamentoPrim(Arestas* arestas,int k) {
 		
 		for(j=0;j<QUAT_VERT;j++){
 			
-			
-			
-			
-			
 		}
-		
-		
-		
-		
 	}
-	
-	
-	
 	
 }
 
