@@ -7,12 +7,13 @@ A *Clusterização* de Dados ou Análise de Agrupamentos é uma técnica de mine
 ## Algoritmos :pushpin:
 
 - [x] **[Algoritmos de Ordenação](./Ordenação)** :white_check_mark:
+- [x] **[Árvores Geradoras Mínimas aplicadas a Agrupamento de Dados](./Agrupamento)** :white_check_mark:
 ## Para fazer :pencil:
-- [ ] **[Árvores Geradoras Mínimas aplicadas a Agrupamento de Dados](./Agrupamento)** :hourglass:
+...
 ## Resultados :clipboard:
 
 - **[Relatório Ordenação](./RelatórioOrdenação.pdf)** :white_check_mark:
-- **[Relatório Agrupamento](./RelatórioAgrupamento.pdf)** :hourglass:
+- **[Relatório Agrupamento](./RelatórioAgrupamento.pdf)** :whie_check_mark:
 
 ## Casos de Teste :package:
 
